@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var foo = {
+        sayHi: function() {
+            return this;
+        }
+    }
+    var bar = {
+        sayHi: foo.sayHi
+    }
+    var temp = bar.sayHi;
+    console.log(foo.sayHi(),foo.sayHi() === foo);
+    console.log(bar.sayHi() === bar,bar.sayHi() === foo);
+    console.log(temp(),temp() === foo);
+    console.log(foo.sayHi.call(bar),foo.sayHi.call(bar) === bar);
+</script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function* Foo() {
+        let id = 0;
+        while (true) {
+            yield ++id;
+        }
+    }
+    const foo = Foo();
+    const id1 = {id: foo.next().value}
+    const id2 = {id: foo.next().value}
+    const id3 = {id: foo.next().value}
+    console.log(id1, id2, id3);
+    
+</script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="kk">
+        <ul>
+            <li>
+                <a href=""></a>
+                <b></b>
+            </li>
+            <li>
+                <a href=""></a>
+            </li>
+            <li></li>
+        </ul>
+        <span></span>
+        <i></i>
+    </div>
+</body>
+<script>
+    function setTree(ele, callback) {
+        callback(ele);
+        ele = ele.firstElementChild;
+        while(ele) {
+            setTree(ele, callback);
+            ele = ele.nextElementSibling;
+        }
+    }
+    const div = document.querySelector("#kk");
+    setTree(div, function(ele) {
+        console.log(ele.nodeName);
+        
+    })
+</script>
+</html>
